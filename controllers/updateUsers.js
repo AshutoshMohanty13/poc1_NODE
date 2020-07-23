@@ -1,8 +1,11 @@
 const fs = require("fs");
+
 let rawData = fs.readFileSync("./data/users.json");
 let data = JSON.parse(rawData);
+
 exports.updateUser = (req, res) => {
     try{
+        
     let found = data.find((user) => {
         return user.id === parseInt(req.params.id);
     });    

@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const { body } = require("express-validator/check");
 const getUsers = require("../controllers/getUsers");
 const addUsers = require("../controllers/addUsers");
 const updateUsers = require("../controllers/updateUsers");
 const deleteUsers = require("../controllers/deleteUsers");
+const validate = require("./validations");
 
 
 let rawData = fs.readFileSync("./data/users.json");
@@ -22,10 +24,10 @@ router.get("/:id", getUsers.getUser);
 //CREATE
 //add new object to data array
 
-router.post("/", addUsers.createUsers);
+router.post("/", validate.validateCreateUser,addUsers.createUsers);
 
 //UPDATE
-router.put("/:id", updateUsers.updateUser);
+router.put("/:id" ,updateUsers.updateUser);
 
 //DELETE
 router.delete("/:id", deleteUsers.deleteUser);

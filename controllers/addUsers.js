@@ -1,10 +1,18 @@
 const fs = require("fs");
+const { validationResult } = require("express-validator/check");
+
 let rawData = fs.readFileSync("./data/users.json");
 let data = JSON.parse(rawData);
+
 
 exports.createUsers = (req, res) => {
     
     try{
+        const error = validationResult(req);
+        if(!error.isEmpty()){
+            res.send(error);
+            return;
+        }
          //create an object of the new item
         let newUser = {
             id: req.body.id,
