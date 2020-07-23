@@ -1,0 +1,19 @@
+{
+  "name": "poc",
+  "version": "1.0.0",
+  "description": "POC",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashutosh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.9.25",
+    "nodemon": "^2.0.4"
+  }
+}
