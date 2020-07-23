@@ -1,0 +1,40 @@
+{
+	  "config": {
+	    "target": "http://localhost:9000/users",
+
+	    "phases": [
+	      {
+	        "duration": 30,
+	        "arrivalRate": 5
+	      }
+	    ]
+	  },
+	  "scenarios": [
+	    {
+	      "flow": [
+			{
+				"post": {
+					"url" : "/",
+					"json": {
+					  "id": "10",
+					  "name": "sam",
+					  "password": "password10",
+					  "profession": "tester"
+					}
+				  }
+				},
+				{
+				  "get":{
+					"url": "/1"
+	
+				  }
+				},
+	        {
+	          "get": {
+	            "url": "/"
+	          }
+	        }
+	      ]
+	    }
+	  ]
+	}
