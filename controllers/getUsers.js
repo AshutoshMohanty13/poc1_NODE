@@ -5,8 +5,11 @@ let data = JSON.parse(rawData);
 exports.getUser = (req, res) => {
     try{
     let found = data.find((user) => {
-        return user.id === parseInt(req.params.id);
+        //console.log(user.id === parseInt(req.params.id), user.id)
+        return parseInt(user.id) === parseInt(req.params.id);
     });
+    // console.log(parseInt(req.params.id));
+    // console.log(found);
 
     if(found) res.status(200).json(found);
     else res.sendStatus(404);
