@@ -1,4 +1,5 @@
 const fs = require("fs");
+const logger = require("../utils/logger");
 
 let rawData = fs.readFileSync("./data/users.json");
 let data = JSON.parse(rawData);
@@ -7,6 +8,10 @@ exports.updateUser = (req, res) => {
     try{
         
     let found = data.find((user) => {
+        logger.log({
+            level: "error",
+            message: "error in finding the user"
+        });
         return user.id === parseInt(req.params.id);
     });    
     
@@ -23,8 +28,18 @@ exports.updateUser = (req, res) => {
 
         //replace object of data by the updated data
         data.splice(targetIndex, 1, updated);
+        logger.log({
+            level: "info",
+            message: "user details successfully updated"
+        });
         fs.writeFile("./data/users.json", JSON.stringify(data), (err) => {
-            if(err) throw err;
+            if(err){ 
+                logger.log({
+                    level: "error",
+                    message: err
+                });
+                throw err;
+            }
         });
 
         
@@ -33,6 +48,10 @@ exports.updateUser = (req, res) => {
     else res.sendStatus(404);
 }catch(ex){
     console.log(ex);
+    logger.log({
+        level: "error",
+        message: ex
+    });
     res.sendStatus(500);
 }
 };

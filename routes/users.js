@@ -7,6 +7,7 @@ const addUsers = require("../controllers/addUsers");
 const updateUsers = require("../controllers/updateUsers");
 const deleteUsers = require("../controllers/deleteUsers");
 const validate = require("./validations");
+const logger = require("../utils/logger");
 
 
 let rawData = fs.readFileSync("./data/users.json");
@@ -15,7 +16,12 @@ let data = JSON.parse(rawData);
 //READ
 //returns JSON data array
 router.get("/", (req,res) => {
+    logger.log({
+        level: "info",
+        message: "user details"
+    });
     res.status(200).json(data);
+
 });
 
 //returns an object from a data array find by ID
