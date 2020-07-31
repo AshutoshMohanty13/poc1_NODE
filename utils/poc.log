@@ -4,3 +4,24 @@
   message: 'addUser validation error',
   timestamp: '2020-07-29T10:23:15.948Z'
 }
+{
+  level: 'error',
+  message: TypeError: Cannot read property 'id' of undefined
+      at Object.exports.createUsers (C:\Users\singl\Node\POC\poc1_NODE\controllers\addUsers.js:23:26)
+      at Context.<anonymous> (C:\Users\singl\Node\POC\poc1_NODE\test\test.js:15:17)
+      at callFnAsync (C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runnable.js:385:21)
+      at Test.Runnable.run (C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runnable.js:329:7)
+      at Runner.runTest (C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runner.js:625:10)
+      at C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runner.js:749:12
+      at next (C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runner.js:542:14)
+      at C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runner.js:552:7
+      at next (C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runner.js:453:14)
+      at Immediate._onImmediate (C:\Users\singl\Node\POC\poc1_NODE\node_modules\mocha\lib\runner.js:520:5)
+      at processImmediate (internal/timers.js:439:21),
+  timestamp: '2020-07-29T10:46:39.630Z'
+}
+{
+  level: 'error',
+  message: 'addUser validation error',
+  timestamp: '2020-07-29T12:38:27.677Z'
+}

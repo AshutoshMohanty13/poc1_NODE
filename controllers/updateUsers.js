@@ -8,10 +8,6 @@ exports.updateUser = (req, res) => {
     try{
         
     let found = data.find((user) => {
-        logger.log({
-            level: "error",
-            message: "error in finding the user"
-        });
         return user.id === parseInt(req.params.id);
     });    
     
@@ -45,7 +41,12 @@ exports.updateUser = (req, res) => {
         
         res.status(201).json(updated);
     }
-    else res.sendStatus(404);
+    else{ 
+        logger.log({
+            level: "error",
+            message: "error in finding the user"
+        });
+        res.sendStatus(404)};
 }catch(ex){
     console.log(ex);
     logger.log({
