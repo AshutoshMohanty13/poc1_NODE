@@ -28,18 +28,6 @@
   - [Response Example Json](#response-example-json)
   - [Status Codes](#status-codes)
 
-- [Login User](#Login-user) 
-  - [Login user API](#Login-user-api) 
-  - [Response Example Json](#response-example-json)
-  - [Status Codes](#status-codes)
-
-- [Register User](#Register-user) 
-  - [Register user API](#Register-user-api) 
-  - [Response Example Json](#response-example-json)
-  - [Status Codes](#status-codes)
-
-
-
 
 # Introduction 
 
@@ -192,26 +180,3 @@ Error code |                         Error Message
 500        |                    FAILED 
 
 
-# Login User 
-
-## Login user API 
-
-`POST /login` 
-
-## Response Example Json 
-
-```json 
-{
-        "id": 3,
-        "name": "Sanath",
-        "password": "password3",
-        "profession": "Reporting Manager"
-		}
-		
-
-``` 
-## Status Codes 
-
-Error code |                         Error Message 
----------- | :-----------------------------------------------------------: 
-500        |                    FAILED 
